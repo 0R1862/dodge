@@ -5,9 +5,10 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a00re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5km3n"]
-size = Vector2(2.4766235, 731.375)
+size = Vector2(19.238312, 731.375)
 
 [node name="TestMap" type="Node2D" unique_id=916764104]
+position = Vector2(-8, -6)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=548845514]
 physics_material_override = SubResource("PhysicsMaterial_a00re")
@@ -36,7 +37,7 @@ shape = SubResource("RectangleShape2D_5km3n")
 physics_material_override = SubResource("PhysicsMaterial_a00re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1813652636]
-position = Vector2(483, 371)
+position = Vector2(484, 363)
 shape = SubResource("RectangleShape2D_5km3n")
 
 [node name="CharacterBody2D" parent="." unique_id=17788158 instance=ExtResource("1_jlwbg")]

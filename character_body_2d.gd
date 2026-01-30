@@ -1,10 +1,27 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 200
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
+	
+	
+	if Input.is_action_pressed("up"):
+		$AnimatedSprite2D.animation = "up"
+		$AnimatedSprite2D.flip_v = false
+	if Input.is_action_pressed("down"):
+		$AnimatedSprite2D.animation = "up"
+		$AnimatedSprite2D.flip_v = true
+	if Input.is_action_pressed("left"):
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.flip_v = false
+	if Input.is_action_pressed("right"):
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.flip_v = false
+
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed

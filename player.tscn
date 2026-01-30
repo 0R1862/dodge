@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://couyhcegeihme" path="res://art/playerGrey_walk2.png" id="5_b26j0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nvl01"]
-radius = 37.0
-height = 114.0
+radius = 50.0
+height = 140.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7ghd"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("2_2hs0m")
 }, {
 "duration": 1.0,
@@ -25,7 +25,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("4_dw050")
 }, {
 "duration": 1.0,
@@ -37,30 +37,30 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
-radius = 36.0
-height = 114.0
+radius = 50.0
+height = 133.33331
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=17788158]
-position = Vector2(-18, 107)
+position = Vector2(99, 109)
 script = ExtResource("1_2hs0m")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1679910927]
-position = Vector2(-1, 1)
+scale = Vector2(0.3, 0.3)
 shape = SubResource("CapsuleShape2D_nvl01")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1524960857]
-position = Vector2(-1.999999, 1)
-scale = Vector2(0.787037, 0.83287036)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_n7ghd")
 animation = &"up"
 metadata/_edit_group_ = true
 
 [node name="Player" type="Area2D" parent="." unique_id=1486639868]
-position = Vector2(-1, 0)
+position = Vector2(0, 1)
 script = ExtResource("1_sweqy")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1333416511]
+scale = Vector2(0.3, 0.3)
 shape = SubResource("CapsuleShape2D_1jxqw")
