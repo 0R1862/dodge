@@ -1,21 +1,27 @@
 [gd_scene format=3 uid="uid://6c77vwq26451"]
 
 [ext_resource type="PackedScene" uid="uid://clybje3qfbio0" path="res://player.tscn" id="1_jlwbg"]
+[ext_resource type="Script" uid="uid://d01qmmkt1f06p" path="res://map.gd" id="1_xxdj2"]
 [ext_resource type="PackedScene" uid="uid://cbcsmodawxel5" path="res://enemy.tscn" id="2_g3g4i"]
+[ext_resource type="PackedScene" uid="uid://b7o7x4ygb0bgx" path="res://enemy_r.tscn" id="4_onbnv"]
+[ext_resource type="PackedScene" uid="uid://dy3nefqx3xlw1" path="res://enemy_f.tscn" id="5_lulwx"]
+[ext_resource type="FontFile" uid="uid://cit6gwe5px1q8" path="res://fonts/Xolonium-Regular.ttf" id="6_ix1e5"]
+[ext_resource type="Script" uid="uid://drb6ujasft7j3" path="res://Sctr.gd" id="7_hvnfr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a00re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5km3n"]
-size = Vector2(19.238312, 731.375)
+size = Vector2(31.380844, 731.375)
 
-[node name="TestMap" type="Node2D" unique_id=916764104]
+[node name="Map" type="Node2D" unique_id=916764104]
 position = Vector2(-8, -6)
+script = ExtResource("1_xxdj2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=548845514]
 physics_material_override = SubResource("PhysicsMaterial_a00re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1220639998]
-position = Vector2(8, 356)
+position = Vector2(18, 356)
 shape = SubResource("RectangleShape2D_5km3n")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1320867600]
@@ -38,10 +44,32 @@ shape = SubResource("RectangleShape2D_5km3n")
 physics_material_override = SubResource("PhysicsMaterial_a00re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1813652636]
-position = Vector2(484, 363)
+position = Vector2(481, 351)
 shape = SubResource("RectangleShape2D_5km3n")
 
-[node name="CharacterBody2D" parent="." unique_id=17788158 instance=ExtResource("1_jlwbg")]
-position = Vector2(276, 265)
-
 [node name="EnemybodyT" parent="." unique_id=1027150366 instance=ExtResource("2_g3g4i")]
+
+[node name="EnemybodyTT" parent="." unique_id=1511119172 instance=ExtResource("2_g3g4i")]
+
+[node name="EnemyR" parent="." unique_id=1656785131 instance=ExtResource("4_onbnv")]
+
+[node name="EnemyR2" parent="." unique_id=495918247 instance=ExtResource("4_onbnv")]
+
+[node name="enemy_f" parent="." unique_id=1982224497 instance=ExtResource("5_lulwx")]
+
+[node name="enemy_f2" parent="." unique_id=180692403 instance=ExtResource("5_lulwx")]
+
+[node name="Playerbody" parent="." unique_id=17788158 instance=ExtResource("1_jlwbg")]
+position = Vector2(250, 360)
+
+[node name="ScoreL" type="StaticBody2D" parent="." unique_id=1374419999]
+
+[node name="Scores" type="RichTextLabel" parent="ScoreL" unique_id=1292863151]
+offset_left = 149.0
+offset_top = 17.0
+offset_right = 372.0
+offset_bottom = 86.0
+theme_override_fonts/normal_font = ExtResource("6_ix1e5")
+text = "
+Current score:"
+script = ExtResource("7_hvnfr")

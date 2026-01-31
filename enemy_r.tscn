@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b7o7x4ygb0bgx"]
+
+[ext_resource type="Script" uid="uid://bulyhksmqgjay" path="res://enemy_r.gd" id="1_dll0b"]
+[ext_resource type="Texture2D" uid="uid://5lvm88ij4jqn" path="res://art/enemySwimming_1.png" id="1_t04aw"]
+[ext_resource type="Texture2D" uid="uid://bng45cvsgufqc" path="res://art/enemySwimming_2.png" id="2_dll0b"]
+[ext_resource type="Script" uid="uid://b03gdk7d040dn" path="res://enemyrh.gd" id="4_05531"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05531"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_t04aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dll0b")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t04aw"]
+radius = 18.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dll0b"]
+radius = 23.000008
+height = 64.0
+
+[node name="EnemyR" type="CharacterBody2D" unique_id=1656785131]
+position = Vector2(89, 268)
+script = ExtResource("1_dll0b")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1667282256]
+position = Vector2(-1, 0)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_05531")
+animation = &"swim"
+frame = 1
+frame_progress = 0.57530135
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2255850]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_t04aw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1902836725]
+position = Vector2(1, -1)
+script = ExtResource("4_05531")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1163507019]
+position = Vector2(-1, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_dll0b")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

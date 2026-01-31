@@ -9,7 +9,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nvl01"]
 radius = 50.0
-height = 140.0
+height = 126.66669
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7ghd"]
 animations = [{
@@ -37,30 +37,31 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
-radius = 50.0
+radius = 53.333313
 height = 133.33331
 
 [node name="Playerbody" type="CharacterBody2D" unique_id=17788158 groups=["Player"]]
 position = Vector2(99, 109)
+collision_mask = 2
 script = ExtResource("1_2hs0m")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1679910927]
 scale = Vector2(0.3, 0.3)
 shape = SubResource("CapsuleShape2D_nvl01")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1524960857]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_n7ghd")
 animation = &"up"
-metadata/_edit_group_ = true
 
 [node name="Player" type="Area2D" parent="." unique_id=1486639868]
 position = Vector2(0, 1)
 script = ExtResource("1_sweqy")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1333416511]
+position = Vector2(0, -1)
 scale = Vector2(0.3, 0.3)
 shape = SubResource("CapsuleShape2D_1jxqw")
+
+[connection signal="body_entered" from="Player" to="." method="_on_player_body_entered"]

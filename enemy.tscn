@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://c0m4bqxx133ii" path="res://enemyt.gd" id="1_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://bu4221t7qpa7d" path="res://art/enemyWalking_1.png" id="3_3yqyl"]
+[ext_resource type="Script" uid="uid://dce4f551fb0iu" path="res://enemy_th.gd" id="4_iifgy"]
 [ext_resource type="Texture2D" uid="uid://booij5t7h4efb" path="res://art/enemyWalking_2.png" id="4_wujgv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iifgy"]
-radius = 47.0
-height = 122.0
+radius = 33.333313
+height = 113.33328
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hb8ge"]
 animations = [{
@@ -28,6 +29,7 @@ height = 126.666626
 
 [node name="EnemybodyT" type="CharacterBody2D" unique_id=1027150366]
 position = Vector2(96, 79)
+collision_layer = 2
 script = ExtResource("1_qi2p4")
 metadata/_edit_group_ = true
 
@@ -44,9 +46,12 @@ sprite_frames = SubResource("SpriteFrames_hb8ge")
 animation = &"walk"
 
 [node name="EnemyTh" type="Area2D" parent="." unique_id=147950330]
+script = ExtResource("4_iifgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyTh" unique_id=1797423275]
 position = Vector2(-4, -1)
 rotation = 1.5707964
 scale = Vector2(0.3, 0.3)
 shape = SubResource("CapsuleShape2D_epg4t")
+
+[connection signal="body_entered" from="EnemyTh" to="EnemyTh" method="_on_enemy_th_body_entered"]
