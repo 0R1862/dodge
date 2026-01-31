@@ -40,7 +40,7 @@ animations = [{
 radius = 50.0
 height = 133.33331
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=17788158]
+[node name="Playerbody" type="CharacterBody2D" unique_id=17788158 groups=["Player"]]
 position = Vector2(99, 109)
 script = ExtResource("1_2hs0m")
 metadata/_edit_group_ = true

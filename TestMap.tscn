@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6c77vwq26451"]
 
 [ext_resource type="PackedScene" uid="uid://clybje3qfbio0" path="res://player.tscn" id="1_jlwbg"]
+[ext_resource type="PackedScene" uid="uid://cbcsmodawxel5" path="res://enemy.tscn" id="2_g3g4i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a00re"]
 
@@ -42,3 +43,5 @@ shape = SubResource("RectangleShape2D_5km3n")
 
 [node name="CharacterBody2D" parent="." unique_id=17788158 instance=ExtResource("1_jlwbg")]
 position = Vector2(276, 265)
+
+[node name="EnemybodyT" parent="." unique_id=1027150366 instance=ExtResource("2_g3g4i")]
