@@ -48,3 +48,11 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+
+func _ready():
+	var timer: SceneTreeTimer = get_tree().create_timer(1.0)
+	timer.timeout.connect(_on_timer_timeout)
+
+func _on_timer_timeout():
+	Globalscr.current_score += 10
+	_ready()

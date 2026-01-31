@@ -41,8 +41,6 @@ radius = 53.333313
 height = 133.33331
 
 [node name="Playerbody" type="CharacterBody2D" unique_id=17788158 groups=["Player"]]
-position = Vector2(99, 109)
-collision_mask = 2
 script = ExtResource("1_2hs0m")
 metadata/_edit_group_ = true
 
@@ -59,7 +57,7 @@ animation = &"up"
 position = Vector2(0, 1)
 script = ExtResource("1_sweqy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1333416511]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1333416511 groups=["Player"]]
 position = Vector2(0, -1)
 scale = Vector2(0.3, 0.3)
 shape = SubResource("CapsuleShape2D_1jxqw")

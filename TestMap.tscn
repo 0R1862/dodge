@@ -11,7 +11,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a00re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5km3n"]
-size = Vector2(31.380844, 731.375)
+size = Vector2(31.380844, 757.6875)
 
 [node name="Map" type="Node2D" unique_id=916764104]
 position = Vector2(-8, -6)
@@ -21,14 +21,14 @@ script = ExtResource("1_xxdj2")
 physics_material_override = SubResource("PhysicsMaterial_a00re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1220639998]
-position = Vector2(18, 356)
+position = Vector2(-9, 363.15625)
 shape = SubResource("RectangleShape2D_5km3n")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1320867600]
 physics_material_override = SubResource("PhysicsMaterial_a00re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1558113027]
-position = Vector2(359, 3)
+position = Vector2(331, -11)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_5km3n")
 
@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_5km3n")
 physics_material_override = SubResource("PhysicsMaterial_a00re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1228445494]
-position = Vector2(371.3125, 723.2383)
+position = Vector2(320, 745)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_5km3n")
 
@@ -44,7 +44,7 @@ shape = SubResource("RectangleShape2D_5km3n")
 physics_material_override = SubResource("PhysicsMaterial_a00re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1813652636]
-position = Vector2(481, 351)
+position = Vector2(504, 366)
 shape = SubResource("RectangleShape2D_5km3n")
 
 [node name="EnemybodyT" parent="." unique_id=1027150366 instance=ExtResource("2_g3g4i")]
@@ -73,3 +73,7 @@ theme_override_fonts/normal_font = ExtResource("6_ix1e5")
 text = "
 Current score:"
 script = ExtResource("7_hvnfr")
+
+[node name="Timer" type="Timer" parent="." unique_id=544180764]
+wait_time = 0.5
+autostart = true
