@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dy3nefqx3xlw1" path="res://enemy_f.tscn" id="5_lulwx"]
 [ext_resource type="FontFile" uid="uid://cit6gwe5px1q8" path="res://fonts/Xolonium-Regular.ttf" id="6_ix1e5"]
 [ext_resource type="Script" uid="uid://drb6ujasft7j3" path="res://Sctr.gd" id="7_hvnfr"]
+[ext_resource type="AudioStream" uid="uid://q2pf4fr8d0ks" path="res://art/House In a Forest Loop.ogg" id="8_1y0um"]
+[ext_resource type="AudioStream" uid="uid://dw26fpygeag8o" path="res://art/gameover.wav" id="9_4ykif"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a00re"]
 
@@ -77,3 +79,11 @@ script = ExtResource("7_hvnfr")
 [node name="Timer" type="Timer" parent="." unique_id=544180764]
 wait_time = 0.5
 autostart = true
+
+[node name="Bg" type="AudioStreamPlayer2D" parent="." unique_id=868853641]
+stream = ExtResource("8_1y0um")
+autoplay = true
+
+[node name="Gameover" type="AudioStreamPlayer2D" parent="." unique_id=732241138]
+unique_name_in_owner = true
+stream = ExtResource("9_4ykif")
