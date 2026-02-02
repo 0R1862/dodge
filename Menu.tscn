@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://chxdjo35gf01r"]
+
+[ext_resource type="Script" uid="uid://ds1h02y0ivbmi" path="res://menu.gd" id="1_5yleq"]
+[ext_resource type="FontFile" uid="uid://cit6gwe5px1q8" path="res://fonts/Xolonium-Regular.ttf" id="1_uubjt"]
+
+[node name="Menu" type="Node2D" unique_id=1557913446]
+script = ExtResource("1_5yleq")
+
+[node name="Control" type="Control" parent="." unique_id=1620731072]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="p" type="Button" parent="Control" unique_id=49344737]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 150.0
+offset_right = 370.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("1_uubjt")
+text = "PLAY THE GAME"
+
+[node name="q" type="Button" parent="Control" unique_id=1197307700]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 120.0
+offset_top = 496.0
+offset_right = 370.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("1_uubjt")
+text = "QUIT THE GAME"
+
+[connection signal="pressed" from="Control/p" to="." method="_on_p_pressed"]
+[connection signal="pressed" from="Control/q" to="." method="_on_q_pressed"]

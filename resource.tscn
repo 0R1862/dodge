@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://by3cgiw0krv88"]
+
+[ext_resource type="Script" uid="uid://2osrxj3tnjyb" path="res://resource_preloader.gd" id="1_txoar"]
+
+[node name="ResourcePreloader" type="ResourcePreloader" unique_id=212268174]
+script = ExtResource("1_txoar")

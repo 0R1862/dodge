@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://cit6gwe5px1q8" path="res://fonts/Xolonium-Regular.ttf" id="6_ix1e5"]
 [ext_resource type="Script" uid="uid://drb6ujasft7j3" path="res://Sctr.gd" id="7_hvnfr"]
 [ext_resource type="AudioStream" uid="uid://q2pf4fr8d0ks" path="res://art/House In a Forest Loop.ogg" id="8_1y0um"]
+[ext_resource type="Script" uid="uid://c71fht2jdj8st" path="res://highl.gd" id="8_43vq4"]
 [ext_resource type="AudioStream" uid="uid://dw26fpygeag8o" path="res://art/gameover.wav" id="9_4ykif"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a00re"]
@@ -66,7 +67,7 @@ position = Vector2(250, 360)
 
 [node name="ScoreL" type="StaticBody2D" parent="." unique_id=1374419999]
 
-[node name="Scores" type="RichTextLabel" parent="ScoreL" unique_id=1292863151]
+[node name="Current" type="RichTextLabel" parent="ScoreL" unique_id=1292863151]
 offset_left = 149.0
 offset_top = 17.0
 offset_right = 372.0
@@ -75,6 +76,15 @@ theme_override_fonts/normal_font = ExtResource("6_ix1e5")
 text = "
 Current score:"
 script = ExtResource("7_hvnfr")
+
+[node name="Highl" type="RichTextLabel" parent="ScoreL" unique_id=1288519807]
+offset_left = 149.0
+offset_top = 61.0
+offset_right = 421.0
+offset_bottom = 100.0
+theme_override_fonts/normal_font = ExtResource("6_ix1e5")
+text = "Highest Score:"
+script = ExtResource("8_43vq4")
 
 [node name="Timer" type="Timer" parent="." unique_id=544180764]
 wait_time = 0.5

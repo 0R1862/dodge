@@ -10,7 +10,9 @@ func _on_body_entered(body: Node2D) -> void:
 		hide()
 		await get_tree().create_timer(0.3).timeout
 		gameover.play()
+		Globalscr.Sc_upd()
 		await get_tree().create_timer(1.85).timeout
 		get_tree().paused = true
-		await get_tree().create_timer(3).timeout
-		get_tree().quit()
+		if get_tree().paused == true:
+			get_tree().paused = false
+			Globalscr.play_again()

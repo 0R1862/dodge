@@ -48,6 +48,8 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+	if get_input() == true:
+		_ready()
 
 func _ready():
 	var timer: SceneTreeTimer = get_tree().create_timer(1.0)

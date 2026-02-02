@@ -9,7 +9,7 @@ var addsp = true
 func _physics_process(_delta):
 	var direction = (target.position-position).normalized()
 	velocity=direction * speed
-	look_at(direction)
+	look_at(target.position)
 	move_and_slide()
 
 	if velocity.length() > 0:
